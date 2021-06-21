@@ -10,12 +10,13 @@ let input =[];
 rl.on('line',function(line){
     input = line.split(' ');
     }).on('close',function(){
-       let=i;
+       let i=0;
        while(input[i]!=0){
         let sum=curruntNum.length; 
-        const curruntNum = input[i].map((el)=> parseInt(el));
+        const num = input[i]
          
-         for(i=0; i<input.length;i++){
+         for(let j=0; j<num.length;j++){
+            const curruntNum=num[j].map((el)=> parseInt(el));
             if (curruntNum==1)
               sum+=2;
             else if (curruntNum==0)
@@ -24,7 +25,7 @@ rl.on('line',function(line){
               sum+=3;
          }
          console.log(sum);
-
+         i++;
        }
 
         process.exit();
