@@ -12,9 +12,8 @@ rl.on('line',function(line){
     }).on('close',function(){
        let i=0;
        while(input[i]!=0){
-        let sum=curruntNum.length; 
         const num = input[i]
-         
+        let sum=num.length; 
          for(let j=0; j<num.length;j++){
             const curruntNum=num[j].map((el)=> parseInt(el));
             if (curruntNum==1)
