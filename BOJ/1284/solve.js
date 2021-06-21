@@ -5,21 +5,27 @@ const rl =readline.createInterface({
    output: process.stdout
 });
 
-let imput =[];
+let input =[];
 
 rl.on('line',function(line){
-    input = line.split(' ').map((el)=> parseInt(el));
+    input = line.split(' ');
     }).on('close',function(){
-       
-        let num1 = Number(input[0]);
-        let num2 = Number(input[1]);
+       let=i;
+       while(input[i]!=0){
+        let sum=curruntNum.length; 
+        const curruntNum = input[i].map((el)=> parseInt(el));
+         
+         for(i=0; i<input.length;i++){
+            if (curruntNum==1)
+              sum+=2;
+            else if (curruntNum==0)
+              sum+=4;
+            else
+              sum+=3;
+         }
+         console.log(sum);
 
+       }
 
-        
-      //이 아래가 프로그램을 작성하는 곳 이라고 생각하면 된다.
-        console.log(num1+num2);
-
-
-        
         process.exit();
         });
