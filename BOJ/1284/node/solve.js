@@ -15,10 +15,10 @@ rl.on('line',function(line){
         const num = input[i]
         let sum=num.length; 
          for(let j=0; j<num.length;j++){
-            const curruntNum=num[j].map((el)=> parseInt(el));
-            if (curruntNum==1)
+            const curruntNum=num[j];
+            if (curruntNum=='1')
               sum+=2;
-            else if (curruntNum==0)
+            else if (curruntNum=='0')
               sum+=4;
             else
               sum+=3;
