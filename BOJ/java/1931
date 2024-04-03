@@ -1,0 +1,64 @@
+package test;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.StringTokenizer;
+import java.util.Stack;
+import java.util.Vector;
+import java.util.Collections;
+import java.util.Comparator;
+public class Main{
+	
+	
+    public static void main(String[] args)throws IOException{
+    	class tuple{
+    		public int x;
+    		public int y;
+    		tuple(int a , int b ){
+    			x=a;
+    			y=b;
+    		}
+    	};
+    	class MemberComparator implements Comparator{
+    		  public int compare(Object arg0, Object arg1) {
+    		   return ((tuple)arg0).x - ((tuple)arg1).x;
+    		 }
+    		}
+    
+		BufferedReader testReader = new BufferedReader(new InputStreamReader(System.in));
+
+		Vector<tuple> t_vector = new Vector();
+
+		
+		int case_num = Integer.parseInt(testReader.readLine());
+		StringTokenizer st;
+		for(int i = 0; i < case_num; i++ ) {
+			st = new StringTokenizer(testReader.readLine());
+			int start = Integer.parseInt(st.nextToken());
+			int end = Integer.parseInt(st.nextToken());
+			t_vector.add(new tuple(start,end));
+			
+		}
+		Collections.sort(t_vector, new MemberComparator());
+		
+		try {
+			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+			for(int i = 0; i < case_num; i++) {
+				bw.write(t_vector.get(i).x+"");
+				bw.write(" ");
+				bw.write(t_vector.get(i).y+"");
+				bw.write("\n");
+			}
+		
+
+
+			bw.close();
+		} catch(IOException e){
+			e.printStackTrace();
+		}
+		
+    }
+}
